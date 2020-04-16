@@ -1,4 +1,4 @@
-package hyperdefined.waitingserverutilities;
+package lol.hyper.waitingserverutilities;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -13,8 +13,8 @@ import java.util.HashMap;
  **/
 public class eOffhandCheck implements Listener {
 
-    public static HashMap<Player, Long> lastChange = new HashMap<>();
-    public static HashMap<Player, Integer> warnings = new HashMap<>();
+    public static final HashMap<Player, Long> lastChange = new HashMap<>();
+    public static final HashMap<Player, Integer> warnings = new HashMap<>();
 
     @EventHandler
     public void onMainHandChange(PlayerSwapHandItemsEvent event) {

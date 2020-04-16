@@ -1,4 +1,4 @@
-package hyperdefined.waitingserverutilities;
+package lol.hyper.waitingserverutilities;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
