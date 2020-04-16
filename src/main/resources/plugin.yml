@@ -1,4 +1,5 @@
 name: DisableEverything
 version: ${project.version}
 main: hyperdefined.waitingserverutilities.WaitingServerUtilities
-api-version: 1.15
+api-version: "1.15"
+author: "hyperdefined"
