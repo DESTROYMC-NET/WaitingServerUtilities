@@ -1,0 +1,4 @@
+name: DisableEverything
+version: ${project.version}
+main: hyperdefined.waitingserverutilities.WaitingServerUtilities
+api-version: 1.15
