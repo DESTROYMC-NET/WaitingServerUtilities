@@ -1,5 +1,5 @@
-name: DisableEverything
-version: ${project.version}
+name: WaitingServerUtilities
+version: "1.0"
 main: lol.hyper.waitingserverutilities.WaitingServerUtilities
 api-version: "1.15"
 author: "hyperdefined"
