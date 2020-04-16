@@ -1,5 +1,6 @@
 name: WaitingServerUtilities
 version: "1.0"
 main: lol.hyper.waitingserverutilities.WaitingServerUtilities
+depend: [PlaceholderAPI]
 api-version: "1.15"
 author: "hyperdefined"
