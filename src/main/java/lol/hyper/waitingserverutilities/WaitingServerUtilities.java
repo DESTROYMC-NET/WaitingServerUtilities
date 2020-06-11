@@ -41,15 +41,16 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
+        event.getPlayer().hidePlayer(this, event.getPlayer());
         event.setJoinMessage(null);
         lastChange.put(event.getPlayer(), System.currentTimeMillis()); // x1D - Offhand Swap fix
         warnings.put(event.getPlayer(), 0); // x1D - Offhand Swap fix
         event.getPlayer().teleport(new Location(event.getPlayer().getWorld(), 0.5, 3.5, 0.5));
         event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome to DESTROYMC.NET");
         if (event.getPlayer().hasPermission("mapcha.bypass")) {
-            event.getPlayer().sendMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), ChatColor.GOLD + "Captcha will appear in %luckperms_expiry_time_mapcha.bypass%."));
+            event.getPlayer().sendMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), ChatColor.DARK_AQUA + "Captcha will appear in %luckperms_expiry_time_mapcha.bypass%."));
         } else {
-            event.getPlayer().sendMessage(ChatColor.GREEN + "Open the map and type the code to complete the captcha. This captcha will appear again after 24 hours.");
+            event.getPlayer().sendMessage(ChatColor.DARK_AQUA + "Open the map and type the code to complete the captcha. This captcha will appear again after 24 hours.");
         }
     }
 
