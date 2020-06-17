@@ -41,13 +41,16 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        event.getPlayer().hidePlayer(this, event.getPlayer());
+        for (Player onlinePlayer : getServer().getOnlinePlayers()) {
+            event.getPlayer().hidePlayer(this, onlinePlayer);
+            onlinePlayer.hidePlayer(this, event.getPlayer());
+        }
         event.setJoinMessage(null);
         lastChange.put(event.getPlayer(), System.currentTimeMillis()); // x1D - Offhand Swap fix
         warnings.put(event.getPlayer(), 0); // x1D - Offhand Swap fix
-        event.getPlayer().teleport(new Location(event.getPlayer().getWorld(), 0.5, 3.5, 0.5));
+        event.getPlayer().teleport(new Location(Bukkit.getWorld("world_the_end"), 0.5, 69, 0.5, 0, 0));
         event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome to DESTROYMC.NET");
-        if (event.getPlayer().hasPermission("mapcha.bypass")) {
+        if (event.getPlayer().hasPermission("mapcha.bypass") && !event.getPlayer().isOp()) {
             event.getPlayer().sendMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), ChatColor.DARK_AQUA + "Captcha will appear in %luckperms_expiry_time_mapcha.bypass%."));
         } else {
             event.getPlayer().sendMessage(ChatColor.DARK_AQUA + "Open the map and type the code to complete the captcha. This captcha will appear again after 24 hours.");
@@ -67,7 +70,10 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
     }
 
     @EventHandler
-    public void onPlayerDropItem(PlayerDropItemEvent event) {
+    public void onPlayerDropItem(PlayerDropItemEvent event) { event.setCancelled(true); }
+
+    @EventHandler
+    public void onPlayerChat(AsyncPlayerChatEvent event) {
         event.setCancelled(true);
     }
 
@@ -103,7 +109,7 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
             if (event.getCause() == EntityDamageEvent.DamageCause.VOID) {
                 new BukkitRunnable() {
                     public void run() {
-                        player.teleport(new Location(player.getWorld(), 0.5, 3.5, 0.5));
+                        player.teleport(new Location(Bukkit.getWorld("world_the_end"), 0.5, 69, 0.5, 0, 0));
                         player.setFallDistance(0F);
                         cancel();
                     }
