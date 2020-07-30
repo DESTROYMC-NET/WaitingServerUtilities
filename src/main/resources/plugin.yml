@@ -1,7 +1,7 @@
 name: WaitingServerUtilities
-version: "1.0"
+version: 1.0
 main: lol.hyper.waitingserverutilities.WaitingServerUtilities
 depend: [PlaceholderAPI]
 load: POSTWORLD
-api-version: "1.15"
+api-version: 1.16
 author: "hyperdefined"
