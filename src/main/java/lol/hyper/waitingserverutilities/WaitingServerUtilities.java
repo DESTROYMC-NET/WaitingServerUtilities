@@ -55,7 +55,8 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
             event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome to DESTROYMC.NET");
         }
         if (event.getPlayer().hasPermission("mapcha.bypass") && !event.getPlayer().isOp()) {
-            event.getPlayer().sendMessage(PlaceholderAPI.setPlaceholders(event.getPlayer(), ChatColor.DARK_AQUA + "Captcha will appear in %luckperms_expiry_time_mapcha.bypass%."));
+            String withPlaceholder = PlaceholderAPI.setPlaceholders(Bukkit.getOfflinePlayer(event.getPlayer().getUniqueId()), ChatColor.DARK_AQUA + "Captcha will appear in %luckperms_expiry_time_mapcha.bypass%.");
+            event.getPlayer().sendMessage(withPlaceholder);
         } else {
             event.getPlayer().sendMessage(ChatColor.DARK_AQUA + "To prove you are not a bot, please complete the captcha. Open the map and type the code into chat.");
         }
