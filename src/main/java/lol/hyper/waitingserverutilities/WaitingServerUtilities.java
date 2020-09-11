@@ -28,9 +28,9 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
     public void onEnable() {
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
 
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            lastChange.put(player, System.currentTimeMillis());
-            warnings.put(player, 0);
+        for (Player player : Bukkit.getOnlinePlayers()) { // x1D - Offhand Swap fix
+            lastChange.put(player, System.currentTimeMillis()); // x1D - Offhand Swap fix
+            warnings.put(player, 0); // x1D - Offhand Swap fix
         }
     }
 
@@ -75,7 +75,8 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
     }
 
     @EventHandler
-    public void onPlayerDropItem(PlayerDropItemEvent event) { event.setCancelled(true); }
+    public void onPlayerDropItem(PlayerDropItemEvent event) {
+        event.setCancelled(true); }
 
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
@@ -94,8 +95,7 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
 
     @EventHandler
     public void onCrystalExplode(EntityCombustByBlockEvent event) {
-        event.setCancelled(true);
-    }
+        event.setCancelled(true); }
 
     @EventHandler
     public void onWeather(WeatherChangeEvent event) {
