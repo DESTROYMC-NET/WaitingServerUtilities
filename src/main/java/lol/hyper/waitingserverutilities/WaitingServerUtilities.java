@@ -95,7 +95,8 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
 
     @EventHandler
     public void onCrystalExplode(EntityCombustByBlockEvent event) {
-        event.setCancelled(true); }
+        event.setCancelled(true);
+    }
 
     @EventHandler
     public void onWeather(WeatherChangeEvent event) {
