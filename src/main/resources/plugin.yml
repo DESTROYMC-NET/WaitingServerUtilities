@@ -1,5 +1,5 @@
 name: WaitingServerUtilities
-version: 1.0
+version: ${project.version}
 main: lol.hyper.waitingserverutilities.WaitingServerUtilities
 depend: [PlaceholderAPI]
 load: POSTWORLD

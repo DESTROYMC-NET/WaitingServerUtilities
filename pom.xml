@@ -6,7 +6,7 @@
 
     <groupId>lol.hyper</groupId>
     <artifactId>waitingserverutilities</artifactId>
-    <version>1.0</version>
+    <version>${git.commit.id.describe-short}</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -31,6 +31,23 @@
                 <version>3.2.0</version>
                 <configuration>
                     <outputDirectory>F:\Everything\Test Servers\Queue\plugins</outputDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>4.0.2</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
                 </configuration>
             </plugin>
         </plugins>
