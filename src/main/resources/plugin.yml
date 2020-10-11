@@ -4,4 +4,4 @@ main: lol.hyper.waitingserverutilities.WaitingServerUtilities
 depend: [PlaceholderAPI]
 load: POSTWORLD
 api-version: 1.16
-author: "hyperdefined"
+author: hyperdefined
