@@ -21,27 +21,22 @@ import java.util.HashMap;
 
 public final class WaitingServerUtilities extends JavaPlugin implements Listener {
 
-    public static final HashMap<Player, Long> lastChange = new HashMap<>(); // x1D - Offhand Swap fix
-    public static final HashMap<Player, Integer> warnings = new HashMap<>(); // x1D - Offhand Swap fix
+    public static final HashMap < Player, Long > lastChange = new HashMap < > (); // x1D - Offhand Swap fix
+    public static final HashMap < Player, Integer > warnings = new HashMap < > (); // x1D - Offhand Swap fix
 
     @Override
     public void onEnable() {
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
 
-        for (Player player : Bukkit.getOnlinePlayers()) { // x1D - Offhand Swap fix
+        for (Player player: Bukkit.getOnlinePlayers()) { // x1D - Offhand Swap fix
             lastChange.put(player, System.currentTimeMillis()); // x1D - Offhand Swap fix
             warnings.put(player, 0); // x1D - Offhand Swap fix
         }
     }
 
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }
-
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        for (Player onlinePlayer : getServer().getOnlinePlayers()) {
+        for (Player onlinePlayer: getServer().getOnlinePlayers()) {
             event.getPlayer().hidePlayer(this, onlinePlayer);
             onlinePlayer.hidePlayer(this, event.getPlayer());
         }
@@ -76,7 +71,8 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
 
     @EventHandler
     public void onPlayerDropItem(PlayerDropItemEvent event) {
-        event.setCancelled(true); }
+        event.setCancelled(true);
+    }
 
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
