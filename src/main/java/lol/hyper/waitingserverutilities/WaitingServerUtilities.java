@@ -45,9 +45,9 @@ public final class WaitingServerUtilities extends JavaPlugin implements Listener
         warnings.put(event.getPlayer(), 0); // x1D - Offhand Swap fix
         event.getPlayer().teleport(new Location(Bukkit.getWorld("world_the_end"), 0.5, 69, 0.5, 0, 0));
         if (event.getPlayer().hasPlayedBefore()) {
-            event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome back to DESTROYMC.NET");
+            event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome back to BlockGame.fun");
         } else {
-            event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome to DESTROYMC.NET");
+            event.getPlayer().sendMessage(ChatColor.GOLD + "Welcome to BlockGame.fun");
         }
         if (event.getPlayer().hasPermission("mapcha.bypass") && !event.getPlayer().isOp()) {
             String withPlaceholder = PlaceholderAPI.setPlaceholders(Bukkit.getOfflinePlayer(event.getPlayer().getUniqueId()), ChatColor.DARK_AQUA + "Captcha will appear in %luckperms_expiry_time_mapcha.bypass%.");
